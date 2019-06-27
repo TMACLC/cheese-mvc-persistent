@@ -34,16 +34,17 @@ public class CategoryController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add (Model model) {
 
-        model.addAttribute(new Category());
+        //model.addAttribute(new Category());
+        model.addAttribute("category", new Category());
         model.addAttribute("title", "Add Category");
 
         return "category/add";
     }
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model,@ModelAttribute @Valid Category category,
+     public String add(Model model,@ModelAttribute @Valid Category category,
                       Errors errors) {
-
-        if (errors.hasErrors()) {
+    //public String processAddCategoryForm(@ModelAttribute @Valid Category newCategory, Errors errors, Model model){
+         if(errors.hasErrors()) {
             return "category/add";
         }
 
