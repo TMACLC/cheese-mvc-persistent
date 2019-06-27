@@ -27,6 +27,7 @@ public class Category {
     }
 
     public Category(String name) {
+
         this.name = name;
     }
 
@@ -36,6 +37,7 @@ public class Category {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -45,5 +47,7 @@ public class Category {
 
     }
 
-    public List<Cheese> getCheeses(){ return cheeses;}
+    public List<Cheese> getCheeses(){
+        return cheeses;
+    }
 }

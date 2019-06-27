@@ -24,10 +24,10 @@ import java.util.List;
 public class CheeseController {
 
     @Autowired
-    CheeseDao cheeseDao;
+    private CheeseDao cheeseDao;
 
     @Autowired
-    CategoryDao categoryDao;
+    private CategoryDao categoryDao;
 
     // Request path: /cheese
     @RequestMapping(value = "")
@@ -86,7 +86,7 @@ public class CheeseController {
         Category cat = categoryDao.findOne(id);
         List<Cheese> cheeses = cat.getCheeses();
         model.addAttribute("cheeses", cheeses);
-        model.addAttribute("title", "Cheeses in Category:" + cat.getName());
+        model.addAttribute("title", "Cheese in Category:" + cat.getName());
         return "cheese/index";
     }
 }
